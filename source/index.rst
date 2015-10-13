@@ -6,7 +6,7 @@ ContractVM is a general-purpose framework for decentralized applications.
 Contents:
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 3
 
 	installation
 	tutorials
