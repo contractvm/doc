@@ -91,7 +91,7 @@ of constants containing the code for each type of message and the dapp code.
 .. code-block:: python
 
 	class BlockStoreProto:
-		DAPP_CODE = 0x08
+		DAPP_CODE = [0x05, 0x66]
 		METHOD_SET = 0x01
 		METHOD_LIST = [METHOD_SET]
 
