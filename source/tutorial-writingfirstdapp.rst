@@ -1,24 +1,26 @@
 Writing your first Dapp
 -----------------------
 
-This section is a brief tutorial for dapp developers. We illustrate how to write a
-dapp by commenting the source code of a decentralized
+This section is a brief tutorial for dapp developers. We illustrate how to
+write a dapp by commenting the source code of a decentralized
 key-value storage service. The full source code of this dapp is available at 
 https://github.com/contractvm/cvm-dapp-blockstore.
-The key-value storage dapp offers two APIs: set(key,value) and get(key).
-A set request saves a new immutable key-value pair, while get retrieves a pre-
-viously set value. Since set changes the state of the dapp, this API requires the
-client to publish a suitable message in the blockchain. Nodes scan the blockchain
-for new messages, and when they find a set request, they save the new key-value
-pair in their local database. Instead, executing a get does not require to publish
+The key-value storage dapp offers two APIs: **set(key, value)** and **get(key)**.
+A *set* request saves a new immutable key-value pair, while *get* retrieves a
+previously set value. Since set changes the state of the dapp, this API
+requires the client to publish a suitable message in the blockchain.
+Nodes scan the blockchain for new messages, and when they find a *set*
+request, they save the new key-value pair in their local database.
+Instead, executing a *get* does not require to publish
 any message, because nodes can handle this request internally.
+
 The dapp is split in two main parts: the first is the dapp which runs in nodes,
 while the second implements the library that client applications use
-to interact with the dapp. Note that, while we have chosen Python for develop-
-ing this dapp, our framework supports arbitrary programming languages. The
-mechanism used to this purpose is standard: the programmer codes the core features 
-of dapp in her preferred language, and the framework uses them through
-the foreign function interface.
+to interact with the dapp. Note that, while we have chosen Python for developing 
+this dapp, our framework supports arbitrary programming languages. The
+mechanism used to this purpose is standard: the programmer codes the core
+features  of dapp in her preferred language, and the framework uses them
+through the foreign function interface.
 
 We start by creating an empty dapp with the empty template:
 
@@ -78,7 +80,7 @@ Now every time we want to install the updated dapp, we type:
 Dapp
 ====
 
-We start from editing the dapp part that runs in nodes, located at myfirstdapp/dapp/myfirstdapp.py.
+We start from editing the dapp part that runs in nodes, located at *myfirstdapp/dapp/myfirstdapp.py*.
 
 Protocol and messages
 .....................
@@ -94,8 +96,8 @@ of constants containing the code for each type of message and the dapp code.
 		METHOD_LIST = [METHOD_SET]
 
 
-Then we extend the Message class, by defining a constructor
-for the set message, and by overriding the function toJSON() for
+Then we extend the **Message** class, by defining a constructor
+for the set message, and by overriding the function *toJSON()* for
 the serialization of message data.
 
 .. code-block:: python
@@ -125,7 +127,7 @@ Core
 .........
 
 The next step is to write the core of our dapp: this is done in the next code-block by
-extending the class dapp.Core. In this class we define all the methods that
+extending the class **dapp.Core**. In this class we define all the methods that
 interact with the dapp state, including query and pair insertion. We define a
 function to obtain a value given its key, and another one to set a new key-value
 pair. We save key-value pairs in the internal database which is automatically
@@ -156,12 +158,12 @@ API
 ...
 
 The services offered by the dapp are exposed to client applications as APIs.
-These APIs are implemented in the next code-block, where we extend the class dapp.API,
+These APIs are implemented in the next code-block, where we extend the class **dapp.API**,
 and we create a dict object which contains new API calls. Then, we
 write our two APIs:
 
-- set (key,value) : creates a set message with a new key-value pair, and returns message broadcasting information;
-- get (key) : gets a value for a given key, by invoking the Core.get method.
+- *set (key,value)*: creates a set message with a new key-value pair, and returns message broadcasting information;
+- *get (key)*: gets a value for a given key, by invoking the Core.get method.
 
 
 .. code-block:: python
@@ -217,7 +219,7 @@ write our two APIs:
 Mixing all classes
 ..................
 
-Finally, we bind all the classes created so far. We use the method handleMessage to tell the framework daemon 
+Finally, we bind all the classes created so far by extending the **dapp.Dapp** class. We use the method *handleMessage* to tell the framework daemon 
 how to handle each message.
 
 
@@ -240,13 +242,13 @@ Client library
 ==============
 
 
-Now we edit the dapp part used directly by clients, located at myfirstdapp/library/. The empty template
-has a file called myfirstdapp/library/EmptyManager.py, but we can rename it with a better name, like "MyFirstManager.py".
+Now we edit the dapp part used directly by clients, located at *myfirstdapp/library/*. The empty template
+has a file called *myfirstdapp/library/EmptyManager.py*, but we can rename it with a better name, like *MyFirstManager.py*.
 
 
 In our library, we define a module that binds the API calls described after, which will be used to write client applications. We
-do this by extending the DappManager. This class includes the services of our
-dapp, by binding the API calls myfirstdapp.get and myfirstdapp.set. The method set only creates
+do this by extending the **licontractvm.DappManager**. This class includes the services of our
+dapp, by binding the API calls *myfirstdapp.get* and *myfirstdapp.set*. The method set only creates
 and broadcasts a new message containing the given key-value pair; the method
 get performs a consensus query to nodes, and returns the resulting value.
 
@@ -269,13 +271,13 @@ get performs a consensus query to nodes, and returns the resulting value.
 Example usage
 =============
 
-We now exploit the created dapp for writing a client application. We first create a ConsensusManager, 
+We now exploit the created dapp for writing a client application. We first create a **ConsensusManager**, 
 and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance). 
 
-Then we create a Wallet object, by using a local instance of
-bitcoin-core with private keys saved in the file app.wallet. 
+Then we create a **Wallet** object, by using a local instance of
+*bitcoin-core* with private keys saved in the file *app.wallet*. 
 
-Next we create a MyFirstManager, by using the ConsensusManager and Wallet objects
+Next we create a **MyFirstManager**, by using the *ConsensusManager* and *Wallet* objects
 created before. The script asks the user for a key-value pair, and
 it publishes it to the framework. Then, the script asks the
 user for a key, and then queries and returns the associated value (if any).

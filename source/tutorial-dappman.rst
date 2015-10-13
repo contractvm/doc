@@ -8,7 +8,8 @@ Dappman is a command line tool which provides package manager features for contr
 - Dapp listing from a public catalog
 - Dapp creation wizard 
 
-
+After each update (dapp installation/update/removal), dappman will automatically restart the
+contractvmd daemon with the new configuration.
 
 
 Listing dapps

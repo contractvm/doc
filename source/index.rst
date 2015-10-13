@@ -1,4 +1,4 @@
-ContractVM
+Contractvm
 ======================================
 
 ContractVM is a general-purpose framework for decentralized applications.
