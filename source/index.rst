@@ -11,6 +11,7 @@ Contents:
 	introduction
 	installation
 	tutorials
+	development
 
 
 Indices and tables
