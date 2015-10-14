@@ -10,4 +10,4 @@ Contractvm is released as open-source software with MIT license. The framework i
 - https://github.com/contractvm/cvm-dapp-blockstore - blockstore case study dapp
 - https://github.com/contractvm/cvm-dapp-fifomom - fifo message-oriented middleware case study dapp
 - https://github.com/contractvm/cvm-dapp-cotst - contract-oriented middleware based on tst case study dapp
-- https://github.com/contractvm/cvm-dapp-empy - empty template dapp
+- https://github.com/contractvm/cvm-dapp-empty - empty template dapp
