@@ -10,4 +10,4 @@ Contents:
 	:maxdepth: 3
 
 	tutorial-dappman
-	tutorial-writingfirstdapp
+	tutorial-firstdapp

@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'ContractVM'
+project = u'Contractvm'
 copyright = u'2015, Davide Gessa'
 author = u'Davide Gessa'
 
