@@ -1,6 +1,10 @@
 Example usage
 =============
 
+
+TODO: quick overview about how to install the created dapp 
+
+
 We now exploit the created dapp for writing a client application. We first create a **ConsensusManager**, 
 and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance). 
 

@@ -124,15 +124,7 @@ write our two APIs:
 				return self.createErrorResponse ('KEY_ALREADY_SET')
 		
 			msg = message.BlockStoreMessage.set (key, value)
-			[datahash, outscript, tempid] = msg.toOutputScript (self.dht)
-			r = { 
-				"outscript": outscript, 
-				"datahash": datahash, 
-				"tempid": tempid, 
-				"fee": proto.Protocol.estimateFee (self.core.getChainCode (), 
-									100 * len (value)) 
-			}
-			return r
+			return self.createTransactionResponse (msg)
 
 
 
@@ -146,11 +138,11 @@ how to handle each message.
 
 .. code-block:: python
 
-	class blockstore (dapp.Dapp):
+	class myfirstdapp (dapp.Dapp):
 		def __init__ (self, chain, db, dht, apiMaster):
 			self.core = core.BlockStoreCore (chain, db)
 			apiprov = api.BlockStoreAPI (self.core, dht, apiMaster)
-			super (blockstore, self).__init__(proto.BlockStoreProto.DAPP_CODE, 
+			super (myfirstdapp, self).__init__(proto.BlockStoreProto.DAPP_CODE, 
 					proto.BlockStoreProto.METHOD_LIST, chain, db, dht, apiprov)
 
 		def handleMessage (self, m):
