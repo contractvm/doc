@@ -20,7 +20,7 @@ get performs a consensus query to nodes, and returns the resulting value.
 			super (MyFirstManager, self).__init__(consensusManager, wallet)
 
 		def set (self, key, value):
-			cid = self._produce_transaction ('myfirstdapp.set', [key, value])
+			cid = self.produceTransaction ('myfirstdapp.set', [key, value])
 			return cid
 	
 		def get (self, key):
