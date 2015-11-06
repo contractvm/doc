@@ -16,6 +16,7 @@ Contents:
 	introduction
 	installation
 	tutorials
+	helperclasses
 	development
 
 
