@@ -5,13 +5,14 @@ At the moment, contractvm has some requirements and it is tested only on linux s
 
 - python3 (3.4 or greater)
 - python3-pip 
-
+- curl
+- git
 
 You can easily install them in ubuntu linux by typing:
 
 .. code-block:: bash
 
-	sudo apt-get install python3 python3-pip
+	sudo apt-get install python3 python3-pip curl git
 
 Now download and execute the quick installation script provided in contractvmd:
 
