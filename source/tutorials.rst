@@ -11,3 +11,4 @@ Contents:
 
 	tutorial-dappman
 	tutorial-firstdapp
+	tutorial-langs

@@ -1,10 +1,16 @@
 Daemon start
 ............
 
-To start the contractvm daemon type:
+To start the contractvm daemon for the first time, type:
 
 .. code-block:: bash
 	
+	contractvmd --discard-old-blocks
+
+Then:
+	
+.. code-block:: bash
+
 	contractvmd
 
 
