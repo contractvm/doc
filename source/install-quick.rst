@@ -14,10 +14,15 @@ You can easily install them in ubuntu linux by typing:
 
 	sudo apt-get install python3 python3-pip curl git
 
-Now download and execute the quick installation script provided in contractvmd:
+	
+Now use pip3 for installing contractvmd and its client library as follow:
 
 .. code-block:: bash
+		
+	sudo pip3 install contractvmd
+	sudo pip3 install libcontractvm
 
-	curl https://raw.githubusercontent.com/contractvm/contractvmd/master/quickinstall.sh | sh
+.. download and execute the quick installation script provided in contractvmd:
+..	curl https://raw.githubusercontent.com/contractvm/contractvmd/master/quickinstall.sh | sh
 
 After the script execution, the contractvmd daemon, libraries and dapp manager should be installed.
