@@ -19,7 +19,7 @@ Now use pip3 for installing contractvmd and its client library as follow:
 
 .. code-block:: bash
 		
-	sudo pip3 install contractvmd
+	sudo pip3 install contractvm
 	sudo pip3 install libcontractvm
 
 .. download and execute the quick installation script provided in contractvmd:
