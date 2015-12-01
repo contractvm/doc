@@ -18,7 +18,7 @@ Contents:
 	tutorials
 	helperclasses
 	development
-
+	donate
 
 Indices and tables
 ==================
