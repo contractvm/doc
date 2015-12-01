@@ -46,3 +46,29 @@ providing a true separation between decentralized applications.
 	:width: 350px
 	:align: center
 
+
+
+.. Contractvm software architecture
+.. ................................
+
+.. The contractvm framework is composed of two software parts:
+.. - The node daemon
+.. - The client library
+
+
+.. Node daemon
+.. ===========
+
+.. The node daemon execute installed dapps and inspect the blockchain for retrieving new dapp messages.
+.. When a new message is found, if its dapp is installed the message is parsed to update the internal
+.. dapp state of the node.
+
+
+.. .. image:: http://contractvm.github.io/media/node-modules.png
+	:width: 250px
+	:align: center
+
+.. Client library
+.. ==============
+
+
