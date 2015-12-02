@@ -19,6 +19,7 @@ Contents:
 	helperclasses
 	development
 	donate
+	credits
 
 Indices and tables
 ==================
