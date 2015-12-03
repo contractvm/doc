@@ -6,7 +6,7 @@ plugin infrastructure that allows to implement arbitrary decentralized applicati
 providing the necessary abstraction layer. In contrast to existing solutions, contractvm doesn't verify 
 computation state of dapps, proposing a client-side consensus mechanism for mitigating malicious behaviours.
 
-Read our **Introduction** or the `Link Whitepaper <http://contractvm.github.io/cvm-white.pdf>`_ for further informations.
+Read our **Introduction** or the `Whitepaper <http://contractvm.github.io/cvm-white.pdf>`_ for further informations.
 
 Contents:
 
