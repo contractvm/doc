@@ -76,5 +76,5 @@ providing a true separation between decentralized applications.
 Whitepaper
 ..........
 
-Read the `Link Whitepaper <http://contractvm.github.io/cvm-white.pdf>` for further informations.
+Read the `Link Whitepaper <http://contractvm.github.io/cvm-white.pdf>`_ for further informations.
 
