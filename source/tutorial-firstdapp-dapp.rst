@@ -28,14 +28,14 @@ the serialization of message data.
 			m = BlockStoreMessage ()
 			m.Key = key
 			m.Value = value
-			m.DappCode = proto.BlockStoreProto.DAPP_CODE
-			m.Method = proto.BlockStoreProto.METHOD_SET
+			m.DappCode = BlockStoreProto.DAPP_CODE
+			m.Method = BlockStoreProto.METHOD_SET
 			return m
 
 		def toJSON (self):
 			data = super (BlockStoreMessage, self).toJSON ()
 
-			if self.Method == proto.BlockStoreProto.METHOD_SET:
+			if self.Method == BlockStoreProto.METHOD_SET:
 				data['key'] = self.Key
 				data['value'] = self.Value
 			else:
@@ -140,13 +140,13 @@ how to handle each message.
 
 	class myfirstdapp (dapp.Dapp):
 		def __init__ (self, chain, db, dht, apiMaster):
-			self.core = core.BlockStoreCore (chain, db)
-			apiprov = api.BlockStoreAPI (self.core, dht, apiMaster)
-			super (myfirstdapp, self).__init__(proto.BlockStoreProto.DAPP_CODE, 
-					proto.BlockStoreProto.METHOD_LIST, chain, db, dht, apiprov)
+			self.core = BlockStoreCore (chain, db)
+			apiprov = BlockStoreAPI (self.core, dht, apiMaster)
+			super (myfirstdapp, self).__init__(BlockStoreProto.DAPP_CODE, 
+					BlockStoreProto.METHOD_LIST, chain, db, dht, apiprov)
 
 		def handleMessage (self, m):
-			if m.Method == proto.BlockStoreProto.METHOD_SET:
+			if m.Method == BlockStoreProto.METHOD_SET:
 				logger.pluginfo ('Found new message %s: set %s', m.Hash, m.Data['key'])
 				self.core.set (m.Data['key'], m.Data['value'])
 
